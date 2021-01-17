@@ -1,4 +1,9 @@
 <div class="container">
-  <app-premier></app-premier>
+    <div class="col-xs-12">
+      <h4>Mes Appareils</h4>
+      <ul class="list-group">
+        <app-appareil *ngFor="let appareil of appareils" [appareilName]="appareil.name"  [appareilStatus]="appareil.status"></app-appareil>
+      </ul>
+    </div>
 </div>
 <router-outlet></router-outlet>

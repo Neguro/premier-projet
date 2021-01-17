@@ -1,0 +1,12 @@
+<div class="list-group-item">
+  <div style="width:20px;height:20px;background-color:red;" *ngIf="getStatus() === 'éteint'"></div>
+  <h4> Appareil : {{ appareilName }} -- Status : {{ getStatus() }} </h4>
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="text" class="btn btn-success" (click)="onAllumer()">Allumer</button>
+  </div>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <button type="text" class="btn btn-danger" (click)="onEteindre()">Eteindre</button>
+  </div>
+</div>
+
+
