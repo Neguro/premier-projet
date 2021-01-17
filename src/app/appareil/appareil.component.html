@@ -1,5 +1,4 @@
-<div class="list-group-item">
-  <li [ngClass]="{'list-group-item': true,
+<li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': getStatus() === 'allumer',
                 'list-group-item-danger': getStatus() === 'éteint'}">
   <div style="width:20px;height:20px;background-color:red;" *ngIf="getStatus() === 'éteint'"></div>
@@ -12,6 +11,6 @@
   <div class="btn-group mr-2" role="group" aria-label="Second group">
     <button type="text" class="btn btn-danger" (click)="onEteindre()">Eteindre</button>
   </div>
-</div>
+</li>
 
 

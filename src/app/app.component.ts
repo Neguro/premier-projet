@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   title = 'app angular';
   isAuth = false;
+  lastUpdate = new Date();
 
   appareils = [
     {
@@ -23,7 +24,7 @@ export class AppComponent {
       status: false
     }
   ]
-  
+
   constructor()
   {
     setTimeout(
