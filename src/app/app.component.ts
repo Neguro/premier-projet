@@ -23,6 +23,7 @@ export class AppComponent {
       status: false
     }
   ]
+  
   constructor()
   {
     setTimeout(
