@@ -11,6 +11,6 @@
         </div>
         <br>
         <button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">Se connecter </button>
-        <button class="btn btn-success" *ngIf="authStatus" (click)="onSignIn()">Se deconnecter</button>
+        <button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se deconnecter</button>
     </div>
 </div>
