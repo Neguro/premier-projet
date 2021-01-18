@@ -6,9 +6,10 @@ import { AppareilService } from './services/appareil.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'app angular';
   isAuth = false;
+
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
     setTimeout(
@@ -17,31 +18,7 @@ export class AppComponent implements OnInit {
       }, 2000);
   });
 
-  appareils: any[];
-  
-  constructor(private appareilService: AppareilService) {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
-    this.appareils = new Array();
-  }
-
-  ngOnInit(): void {
-    this.appareils = this.appareilService.appareils;
-  }
-
-  onAllumer(): void
-  {
-    this.appareilService.toutAllumer();
-  }
-
-  onEteindre(): void
-  {
-    if (confirm("Etes vous sur de vouloir eteindre toutes les serveurs ?")) 
-    {
-      this.appareilService.toutEteindre();
-    }
+  constructor() {
+   
   }
 }

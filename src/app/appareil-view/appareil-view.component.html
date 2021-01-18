@@ -1,0 +1,13 @@
+<h4>Mes Appareils </h4>
+<h5>Mise a jour le : </h5>
+<ul class="list-group">
+  <app-appareil *ngFor="let appareil of appareils; let i = index" [appareilName]="appareil.name"
+    [appareilStatus]="appareil.status" [index]="i"></app-appareil>
+</ul>
+<br>
+<div class="btn-group mr-2" role="group" aria-label="First group">
+  <button type="text" class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
+</div>
+<div class="btn-group mr-2" role="group" aria-label="Second group">
+  <button type="text" class="btn btn-danger" [disabled]="!isAuth" (click)="onEteindre()">Tout eteindre</button>
+</div>
