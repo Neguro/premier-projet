@@ -1,10 +1,16 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#">Authentification</a></li>
-          <li class="active"><a href="#">Appareils</a></li>
-        </ul>
-      </div>
+<div class="col-xs-5">
+    <div class="jumbotron">
+        <h4>Authentification</h4>
+        <label for="username" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" aria-label="username">
+        </div>
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-5" aria-label="password">
+            <input type="text" class="form-control">
+        </div>
+        <br>
+        <button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">Se connecter </button>
+        <button class="btn btn-success" *ngIf="authStatus" (click)="onSignIn()">Se deconnecter</button>
     </div>
-</nav>
+</div>
