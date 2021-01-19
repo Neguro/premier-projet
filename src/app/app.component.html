@@ -15,7 +15,10 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="appareils">Appareils</a>
       </li>
-    </ul>  
+    </ul> 
+    <div class = "navbar-right">
+        <p *ngIf="getAuthState();">Vous etes connecter depuis {{ secondes }} secondes !</p>      
+    </div> 
   </div>
 </nav>
 <div class="container">
