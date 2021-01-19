@@ -10,13 +10,13 @@
         <a class="nav-link" routerLink="">Acceuil</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="auth">Authetification</a>
+        <a class="nav-link" routerLink="auth">Authentification</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a *ngIf="getAuthState();" class="nav-link" routerLink="appareils">Appareils</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a *ngIf="getAuthState();" class="nav-link" routerLink="edit">Edit appareil</a>
+        <a *ngIf="getAuthState();" class="nav-link" routerLink="edit">Nouvel appareil</a>
       </li>
     </ul> 
     <div class = "navbar-right">
