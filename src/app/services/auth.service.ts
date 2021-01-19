@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
-
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements CanActivate {
 
   isAuth: boolean = false;
   constructor() { }
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    throw new Error("");
+  }
 
   signIn()
   {
