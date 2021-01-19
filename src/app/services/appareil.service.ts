@@ -1,11 +1,13 @@
 import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-
+import { Subject } from 'rxjs-compat';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AppareilService {
-  public appareils = [
+  appareilsSubject = new Subject<any[]>();
+  private appareils = [
     {
       id: 1,
       name: 'Serveur Pegasus',
@@ -27,12 +29,18 @@ export class AppareilService {
   
   }
 
+  emitAppareilSubject()
+  {
+    this.appareilsSubject.next(this.appareils.slice());
+  }
+
   toutAllumer() : void
   {
     for(let appareil of this.appareils)
     {
       appareil.status = true;
     }
+    this.emitAppareilSubject();
   }
 
   toutEteindre(): void
@@ -41,16 +49,19 @@ export class AppareilService {
     {
       appareil.status = false;
     }
+    this.emitAppareilSubject();
   }
 
   switchOnOne(i: number) : void
   {
     this.appareils[i].status = true;
+    this.emitAppareilSubject();
   }
 
   switchOffOne(i: number) : void
   {
     this.appareils[i].status = false;
+    this.emitAppareilSubject();
   }
 
   getAppareilById(id: number)
