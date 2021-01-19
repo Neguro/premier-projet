@@ -3,6 +3,7 @@
                 'list-group-item-danger': getStatus() === 'éteint'}">
   <h4 [ngStyle]="{color: getColor()}" > Appareil : {{ appareilName }} -- Status : {{ getStatus() }} </h4>
   <input type="text" class="form-control" [(ngModel)]="appareilName">
+  <a [routerLink]="[id]">Voir détails</a>
   <br>
   <button *ngIf="getStatus() === 'allumer'" type="text" class="btn btn-danger" (click)="onSwitch()">Eteindre</button>
   <button *ngIf="getStatus() === 'éteint'" class="btn btn-success" (click)="onSwitch()">Allumer</button>

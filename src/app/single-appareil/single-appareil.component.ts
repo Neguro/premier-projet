@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AppareilService } from '../services/appareil.service';
 
 @Component({
@@ -8,16 +9,19 @@ import { AppareilService } from '../services/appareil.service';
 })
 export class SingleAppareilComponent implements OnInit {
 
-  name: string;
-  status: string;
+  name: string | undefined;
+  status: boolean | undefined ;
 
-  constructor(private appareilServices: AppareilService) 
+  constructor(private appareilServices: AppareilService, private route: ActivatedRoute) 
   {
     this.name = "Appareil";
-    this.status = "Status";
+    this.status = false;
   }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.params["id"];
+    this.name = this.appareilServices?.getAppareilById(+id)?.name;
+    this.status = this.appareilServices.getAppareilById(+id)?.status;
   }
 
 }
