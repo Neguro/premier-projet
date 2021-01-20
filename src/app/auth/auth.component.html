@@ -14,3 +14,21 @@
         <button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se deconnecter</button>
     </div>
 </div>
+
+<!-- 
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+        <h4>Authentification</h4>
+        <label for="username" class="col-sm-2 col-form-label">Username</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" aria-label="username" ngModel>
+        </div>
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-5" aria-label="password">
+            <input type="text" class="form-control" ngModel>
+        </div>
+        <button class="btn btn-success" type="submit" *ngIf="!authStatus" (click)="onSignIn()">Se connecter </button>
+        <button class="btn btn-danger" type="submit" *ngIf="authStatus" (click)="onSignOut()">Se deconnecter</button>
+    </div>
+</form>
+-->

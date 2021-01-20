@@ -6,8 +6,11 @@ import { User } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
-  private users: User[] = [];
+  private users: User[] = [
+    new User('AHMED ALI','Nassim','nassim@yopmail.fr','jus de pommes',['coder','les milfs']),
+  ];
   userSubject: Subject<User[]> = new Subject<User[]>()
   constructor() {
   }
