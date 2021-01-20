@@ -35,6 +35,7 @@ export class AppareilViewComponent implements OnInit {
     );
     this.isAuth = this.authService.isAuth;
     this.appareilService.emitAppareilSubject();
+
   }
 
   ngOnDestroy() : void
@@ -53,6 +54,16 @@ export class AppareilViewComponent implements OnInit {
     {
       this.appareilService.toutEteindre();
     }
+  }
+
+  onSave(): void
+  {
+    this.appareilService.saveAppareilToServer();
+  }
+
+  onRefresh() : void
+  {
+    this.appareilService.getAppareilFromServer();
   }
 
 }

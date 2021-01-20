@@ -1,6 +1,7 @@
 import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs-compat';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,8 @@ export class AppareilService {
     }
   ]
 
-  constructor() { 
+  constructor(private httpClient: HttpClient) 
+  { 
   
   }
 
@@ -87,5 +89,34 @@ export class AppareilService {
     appareilObject.id = this.appareils[this.appareils.length - 1].id + 1;
     this.appareils.push(appareilObject);
     this.emitAppareilSubject();
+  }
+  
+  saveAppareilToServer()
+  {
+    this.httpClient
+    .post('https://angular-pp-a58f4-default-rtdb.europe-west1.firebasedatabase.app/appareil/-MRV9qvYG8iFZbKqp51h', this.appareils)
+    .subscribe(
+      () => {
+        console.log("Enregistrement terminer !");
+      },
+      (error) => {
+        console.log("Erreur ! : " + error);
+      }
+    );
+  }
+
+  getAppareilFromServer()
+  {
+    this.httpClient
+    .get<any[]>('https://angular-pp-a58f4-default-rtdb.europe-west1.firebasedatabase.app/appareil/-MRV9qvYG8iFZbKqp51h')
+    .subscribe(
+      (response) => {
+        this.appareils = response;
+        this.emitAppareilSubject(); 
+      },
+      (error) => {
+        console.log("Erreur ! : " + error );
+      }
+    );
   }
 }

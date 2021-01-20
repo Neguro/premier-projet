@@ -27,7 +27,7 @@ export class NewUserComponent implements OnInit {
       lastName: ['', Validators.required],
       firstName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      drinkPreferences: ['', Validators.required],
+      drinkPreference: ['', Validators.required],
       hobbies: this.formBuilder.array([])
     });
   }
