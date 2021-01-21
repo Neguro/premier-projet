@@ -94,7 +94,7 @@ export class AppareilService {
   saveAppareilToServer()
   {
     this.httpClient
-    .post('https://angular-pp-a58f4-default-rtdb.europe-west1.firebasedatabase.app/appareil/-MRV9qvYG8iFZbKqp51h', this.appareils)
+    .put('https://angular-pp-a58f4-default-rtdb.europe-west1.firebasedatabase.app/appareils.json', this.appareils)
     .subscribe(
       () => {
         console.log("Enregistrement terminer !");
@@ -108,7 +108,7 @@ export class AppareilService {
   getAppareilFromServer()
   {
     this.httpClient
-    .get<any[]>('https://angular-pp-a58f4-default-rtdb.europe-west1.firebasedatabase.app/appareil/-MRV9qvYG8iFZbKqp51h')
+    .get<any[]>('https://angular-pp-a58f4-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
     .subscribe(
       (response) => {
         this.appareils = response;
