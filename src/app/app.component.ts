@@ -3,7 +3,7 @@ import { Observable } from 'rxjs-compat/Observable';
 import { Subscription } from 'rxjs-compat/Subscription';
 import 'rxjs-compat/add/observable/interval';
 import { AuthService } from './services/auth.service';
-import { values } from 'sequelize/types/lib/operators';
+// import { values } from 'sequelize/types/lib/operators';
 
 @Component({
   selector: 'app-root',
