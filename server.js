@@ -7,14 +7,15 @@ function requireHTTPS(req, res, next) {
 }
 
 const express = require('express');
+
 const app = express();
-const app = express();
+
 app.use(requireHTTPS);
 
-app.use(express.static('./dist/premier-projet.json'));
+app.use(express.static('./dist/premier-projet'));
 
 app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: 'dist/premier-projet.json/'}
+    res.sendFile('index.html', {root: 'dist/premier-projet/'}
   );
   });
 
